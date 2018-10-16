@@ -1,6 +1,7 @@
 <mat-list-item 
   class="container" 
   (click)='onItemClick()'
+  [@item]='widerPriority' 
   [ngClass]="{
     'priority-normal': item.priority === 3,
     'priority-important': item.priority === 2,

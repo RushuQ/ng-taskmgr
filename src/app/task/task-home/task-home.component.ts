@@ -3,17 +3,20 @@ import { NewTaskListComponent } from './../new-task-list/new-task-list.component
 import { CopyTaskComponent } from './../copy-task/copy-task.component';
 import { NewProjectComponent } from './../../project/new-project/new-project.component';
 import { MatDialog } from '@angular/material';
-import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy, HostBinding } from "@angular/core";
 import { TaskListService } from "../../services/task-list.service";
 import { NewTaskComponent } from '../new-task/new-task.component';
+import { slideToRight } from 'src/app/animations/router.anim';
 
 @Component({
   selector: "app-task-home",
   templateUrl: "./task-home.component.html",
   styleUrls: ["./task-home.component.scss"],
+  animations:[slideToRight],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskHomeComponent implements OnInit {
+  @HostBinding('@routerAnim')
   lists = [
     {
       id: 1,
