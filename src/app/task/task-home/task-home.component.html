@@ -11,7 +11,7 @@
       (delList)="launchComfirmDialog()"
       (onEditList)="launchEditListDialog()"
       [header]="list.name"></app-task-header>
-    <app-quick-task></app-quick-task>
+    <app-quick-task (quickTask)="handleQuickTask($event)"></app-quick-task>
     <app-task-item 
       *ngFor="let task of list.tasks" 
       (taskClick)="launchUpdateTaskDialog(task)"

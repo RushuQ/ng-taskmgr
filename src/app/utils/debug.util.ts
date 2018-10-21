@@ -1,6 +1,11 @@
 // import { Observable } from 'rxjs/Observable';
 // import { environment } from "../../environments/environment";
 
+// declare module 'rxjs/Observable' {
+//     interface Observable<T> {
+//         debug: (...any) => Observable<T>
+//     }
+// } 
 
 // Observable.prototype.debug = function (message: any) {
 //     return this.do(
@@ -22,8 +27,3 @@
 //     );
 // };
 
-// declare module 'rxjs/Observable' {
-//     interface Observable<T> {
-//         debug: (...any) => Observable<T>
-//     }
-// } 

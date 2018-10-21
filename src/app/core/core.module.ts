@@ -7,7 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { loadSvgResources } from '../utils/svg.util';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer, BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { ServicesModule } from '../services/services.module';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -26,6 +26,7 @@ import "rxjs/add/operator/count";
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import './../utils/debug.util';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   imports: [
@@ -42,7 +43,7 @@ import './../utils/debug.util';
     SidebarComponent,
     AppRoutingModule
   ],
-  declarations: [FooterComponent, HeaderComponent, SidebarComponent],
+  declarations: [FooterComponent, HeaderComponent, SidebarComponent, PageNotFoundComponent],
   providers: [
     {
       provide: 'BASE_CONFIG',

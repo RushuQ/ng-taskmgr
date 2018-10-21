@@ -3,7 +3,7 @@ import { NewTaskListComponent } from './../new-task-list/new-task-list.component
 import { CopyTaskComponent } from './../copy-task/copy-task.component';
 import { NewProjectComponent } from './../../project/new-project/new-project.component';
 import { MatDialog } from '@angular/material';
-import { Component, OnInit, ChangeDetectionStrategy, HostBinding } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy, HostBinding, ChangeDetectorRef } from "@angular/core";
 import { TaskListService } from "../../services/task-list.service";
 import { NewTaskComponent } from '../new-task/new-task.component';
 import { slideToRight } from 'src/app/animations/router.anim';
@@ -104,7 +104,8 @@ export class TaskHomeComponent implements OnInit {
   ];
   constructor(
     private diolog: MatDialog,
-    private service$: TaskListService
+    private service$: TaskListService,
+    private cd: ChangeDetectorRef
     ) {}
 
   ngOnInit() {}
@@ -142,5 +143,9 @@ export class TaskHomeComponent implements OnInit {
     this.diolog.open(ComfirmDialogComponent, {
       data: { title: "删除任务", content: "您确认删除该任务吗？" }
     }).afterClosed().subscribe(_=>{});
+  }
+
+  handleQuickTask(desc: string) {
+
   }
 }
