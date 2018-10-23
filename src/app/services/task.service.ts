@@ -8,7 +8,7 @@ import { TaskList } from "../domain/task-list.model";
   providedIn: "root"
 })
 export class TaskService {
-  private readonly domain = "projects";
+  private readonly domain = "tasks";
   private headers = new HttpHeaders({
     "Content-Type": "application/json"
   });

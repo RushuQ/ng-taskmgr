@@ -21,21 +21,9 @@ import { slideToRight } from "./../../animations/router.anim";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectListComponent implements OnInit {
-  @HostBinding("@routerAnim")
-  projects = [
-    // {
-    //   id: 1,
-    //   name: "企业协作平台",
-    //   desc: "这是一个企业内部项目",
-    //   coverImg: "assets/img/covers/0.jpg"
-    // },
-    // {
-    //   id: 2,
-    //   name: "自动化测试项目",
-    //   desc: "这是一个企业内部项目",
-    //   coverImg: "assets/img/covers/1.jpg"
-    // }
-  ];
+  @HostBinding("@routerAnim") state;
+
+  projects;
   constructor(
     private service$: ProjectService,
     private dialog: MatDialog,
@@ -55,20 +43,23 @@ export class ProjectListComponent implements OnInit {
     });
     this.cd.markForCheck();
   }
+  
   openNewProjectDialog() {
     const dialogRef = this.dialog.open(NewProjectComponent, {
       data: { title: "新增项目" }
     });
-    dialogRef.afterClosed().subscribe(result => {
-      this.projects = [
-        ...this.projects,
-        {
-          id: 3,
-          name: "一个新项目",
-          desc: "这是一个新项目",
-          coverImg: "assets/img/covers/2.jpg"
-        }
-      ];
+    dialogRef.afterClosed().subscribe(project => {
+      this.service$.add(project);
+      // this.projects = [
+      //   ...this.projects,
+      //   {
+      //     id: 3,
+      //     name: "一个新项目",
+      //     desc: "这是一个新项目",
+      //     coverImg: "assets/img/covers/2.jpg"
+      //   }
+      // ];
+      this.cd.markForCheck();
     });
   }
 

@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
   providedIn: "root"
 })
 export class TaskListService {
-  private readonly domain = "projects";
+  private readonly domain = "taskLists";
   private headers = new HttpHeaders({
     "Content-Type": "application/json"
   });

@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
@@ -9,15 +10,34 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class NewProjectComponent implements OnInit {
   title = '';
+  form: FormGroup;
   constructor(
+    private fb: FormBuilder,
     private dialogRef: MatDialogRef<NewProjectComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
   ngOnInit() {
-    this.title = this.data.title;
+    if(this.data.project) {
+      this.form = this.fb.group({
+        name: [this.data.project.name,Validators.required],
+        desc: [this.data.project.desc],
+        coverImg:[this.data.project.coverImg]
+      });
+      this.title = '修改项目';
+    }else{
+      this.form = this.fb.group({
+        name: ['',Validators.required],
+        desc: [],
+        coverImg:[]
+      });
+      this.title = '创建项目'
+    }
   }
-  onClick() {
-    this.dialogRef.close();
+
+  onSubmit({ value, valid }, ev: Event) {
+    if(!valid)return;
+    ev.preventDefault();
+    this.dialogRef.close(value)
   }
 }
