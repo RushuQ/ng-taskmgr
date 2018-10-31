@@ -1,9 +1,10 @@
 <form>
     <h3 mat-dialog-title>邀请组员：</h3>
     <div mat-dialog-content>
-      <mat-form-field class="full-width">
+      <!-- <mat-form-field class="full-width">
         <input type="text" matInput placeholder="组员名称" [matAutocomplete]="autoMembers">
-      </mat-form-field>
+      </mat-form-field> -->
+      <app-chips-list></app-chips-list>
     </div>
     <div mat-dialog-actions>
       <button mat-raised-button color="primary" type="button" (click)="onClick()">保存</button>

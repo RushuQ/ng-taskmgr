@@ -19,13 +19,17 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatSelectModule,
-  MatButtonToggleModule
+  MatButtonToggleModule,
+  MatChipsModule
 } from "@angular/material";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AgeInputComponent } from "./age-input/age-input.component";
 import { ComfirmDialogComponent } from './comfirm-dialog/comfirm-dialog.component';
 import { DirectiveModule } from "../directive/directive.module";
 import { ImageListSelectComponent } from './image-list-select/image-list-select.component';
+import { ChipsListComponent } from './chips-list/chips-list.component';
+import { IdentityInputComponent } from './identity-input/identity-input.component';
+import { AreaListComponent } from './area-list/area-list.component';
 
 @NgModule({
   imports: [
@@ -50,6 +54,7 @@ import { ImageListSelectComponent } from './image-list-select/image-list-select.
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonToggleModule,
+    MatChipsModule,
     MatSelectModule,
     DirectiveModule
   ],
@@ -78,9 +83,11 @@ import { ImageListSelectComponent } from './image-list-select/image-list-select.
     ReactiveFormsModule,
     AgeInputComponent,
     ImageListSelectComponent,
-    DirectiveModule
+    DirectiveModule,
+    MatChipsModule,
+    ChipsListComponent
   ],
-  declarations: [AgeInputComponent, ComfirmDialogComponent, ImageListSelectComponent],
+  declarations: [AgeInputComponent, ComfirmDialogComponent, ImageListSelectComponent, ChipsListComponent, IdentityInputComponent, AreaListComponent],
   entryComponents: [ComfirmDialogComponent]
 })
 export class SharedModule {}

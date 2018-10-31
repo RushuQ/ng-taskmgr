@@ -18,11 +18,12 @@ export class ProjectService {
   add(project: Project): Observable<Project> {
     const uri = `${this.config.uri}/${this.domain}`;
     return this.http
-      .post(uri, JSON.stringify(project), { headers: this.headers })
+      .patch(uri, JSON.stringify(project), { headers: this.headers })
       .map(res => res as Project);
   }
 
   update(project: Project): Observable<Project> {
+    console.log(project);
     const uri = `${this.config.uri}/${this.domain}/${project.id}`;
     const toUpdate = {
       name: project.name,
@@ -35,7 +36,7 @@ export class ProjectService {
   }
 
   del(project: Project): Observable<Project> {
-    const delTasks$ = Observable.from(project.taskLists)
+    const delTasks$ = Observable.from(project.taskLists ? project.taskLists : [])
       .mergeMap(listId => this.http.delete(`${this.config.uri}/taskLists/${listId}`)).count();
     return delTasks$.switchMap(_ => this.http.delete(`${this.config.uri}/${this.domain}/${project.id}`)).mapTo(project);
   }

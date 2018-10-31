@@ -19,10 +19,9 @@
       "name": "王芃",
       "avatar": "avatars:svg-1",
       "email": "wpcfan@163.com",
-      "id": "37489e0c-df34-c261-71c4-ce75357e3035",
+      "id": "1",
       "projectIds": [
-        "Sk2HaTagb",
-        "Hya1moGb-"
+        "1"
       ],
       "roleIds": [
         0,
@@ -35,39 +34,47 @@
       "name": "李四",
       "avatar": "avatars:svg-2",
       "email": "lisi@163.com",
-      "id": "BkkDvwee-",
+      "id": "2",
       "projectIds": [
-        "Sk2HaTagb"
+        "1"
       ],
       "roleIds": [
         1
+      ]
+    },
+    {
+      "password": "Zs123456",
+      "name": "张三",
+      "avatar": "avatars:svg-2",
+      "email": "zhangsan@163.com",
+      "id": "3",
+      "projectIds": [
+        "2"
+      ],
+      "roleIds": [
+        2
       ]
     }
   ],
   "projects": [
     {
-      "id": "Sk2HaTagb",
+      "id": "1",
       "name": "问题跟踪系统",
       "desc": "用于 Bug 的内部跟踪和管理",
       "coverImg": "/assets/img/covers/1.jpg",
       "members": [
-        "37489e0c-df34-c261-71c4-ce75357e3035",
-        "BkkDvwee-"
+        "1",
+        "2"
       ]
     },
     {
-      "name": "某某公司 ERP 系统",
-      "desc": "为某某公司开发的定制化 ERP 系统",
+      "name": "自动化测试项目",
+      "desc": "定制化 ERP 测试项目系统",
       "coverImg": "/assets/img/covers/20.jpg",
       "members": [
-        "37489e0c-df34-c261-71c4-ce75357e3035"
+        "1"
       ],
-      "id": "Hya1moGb-",
-      "taskLists": [
-        "BylTyXiM-b",
-        "BkWpk7jGZb",
-        "H1fTyXjMWW"
-      ]
+      "id": "2"
     }
   ],
   "taskLists": [
@@ -85,19 +92,19 @@
     },
     {
       "name": "待办",
-      "projectId": "Hya1moGb-",
+      "projectId": "Hya1moGb",
       "order": 1,
       "id": "BylTyXiM-b"
     },
     {
       "name": "进行中",
-      "projectId": "Hya1moGb-",
+      "projectId": "Hya1moGb",
       "order": 2,
       "id": "BkWpk7jGZb"
     },
     {
       "name": "已完成",
-      "projectId": "Hya1moGb-",
+      "projectId": "Hya1moGb",
       "order": 3,
       "id": "H1fTyXjMWW"
     }

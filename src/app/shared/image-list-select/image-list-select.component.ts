@@ -32,6 +32,7 @@ export class ImageListSelectComponent implements ControlValueAccessor {
   useSvgIcon = false;
   @Input()
   itemWidth = "80px";
+  
   selected: string;
 
   constructor() {}
@@ -41,7 +42,9 @@ export class ImageListSelectComponent implements ControlValueAccessor {
     this.propagateChange(this.selected);
   }
   writeValue(obj: any): void {
-    this.selected = obj;
+    if (obj && obj !== '') {
+      this.selected = obj;
+    }
   }
 
   registerOnChange(fn: any): void {

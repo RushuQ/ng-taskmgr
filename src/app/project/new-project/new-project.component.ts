@@ -11,6 +11,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class NewProjectComponent implements OnInit {
   title = '';
   form: FormGroup;
+  coverImages = [];
   constructor(
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<NewProjectComponent>,
@@ -18,6 +19,7 @@ export class NewProjectComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.coverImages = this.data.thumbnails;
     if(this.data.project) {
       this.form = this.fb.group({
         name: [this.data.project.name,Validators.required],
